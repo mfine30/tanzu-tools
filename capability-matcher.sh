@@ -85,7 +85,7 @@ done
 KUBECONFIG=/Users/$USER/.config/tanzu/kube/config
 
 # fetch all capabilities provided in cluster group
-provided=($(kubectl get kubernetesclusters -o jsonpath='{.items[*].status.capabilities[*].name}'))
+provided=($(KUBECONFIG=$KUBECONFIG kubectl get kubernetesclusters -o jsonpath='{.items[*].status.capabilities[*].name}'))
 
 # simplify to only uniquely provided capabilities
 declare -A uniq
