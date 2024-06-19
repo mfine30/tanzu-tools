@@ -85,6 +85,7 @@ done
 KUBECONFIG=/Users/$USER/.config/tanzu/kube/config
 
 # fetch all capabilities provided in cluster group
+tanzu ops clustergroup use $cluster_group > /dev/null
 provided=($(KUBECONFIG=$KUBECONFIG kubectl get kubernetesclusters -o jsonpath='{.items[*].status.capabilities[*].name}'))
 
 # simplify to only uniquely provided capabilities
