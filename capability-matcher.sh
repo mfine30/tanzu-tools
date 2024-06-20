@@ -58,8 +58,15 @@ if [ -z "${cluster_group}" ]; then
   exit 1
 fi
 
-echo "Using context:"
-tanzu context current | grep -E 'Name|Organization|Project'
+echo "Current context:"
+context=$(tanzu context current | grep -E 'Name|Organization|Project|Space|Cluster')
+echo $context
+
+if [[ $context =~ "Space|Cluster\ Group" ]]; then
+  echo "Warning: Space or Cluster Group context is already set. Updating context..."
+  project=$(tanzu context current | grep -E 'Project' | awk '{print $2}')
+  tanzu project use $project
+fi
 
 tanzu profile get $profile -oyaml > /dev/null
 if [ $? -ne 0 ]; then
