@@ -1,6 +1,6 @@
 # tanzu-tools
 
-Basic utility to evaluate if a Cluster Groups provides all capabilities that a Profile requires.
+Basic utility to evaluate if a Cluster Groups provides all Capabilities that a Profile requires.
 
 This utility is designed to help you - a platform engineer - design your platform in the way you see fit. This tool lets
 you validate that your Cluster Groups are configured to run the types of workloads that you intend them for. For example, make sure
@@ -17,4 +17,4 @@ options:
 ```
 
 ### Notes
-* Requires `tanzu`, `kubectl`, `zsh`, and `yq`
+* Requires `tanzu cli`, `kubectl`, `zsh`, and `yq`
