@@ -82,7 +82,7 @@ for cap in "${required[@]}"; do
   echo "  - $cap"
 done
 
-KUBECONFIG=/Users/$USER/.config/tanzu/kube/config
+KUBECONFIG=$(tanzu context current | grep -i "config" | awk '{print $3}')
 
 # fetch all capabilities provided in cluster group
 tanzu ops clustergroup use $cluster_group > /dev/null
