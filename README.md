@@ -18,5 +18,3 @@ options:
 
 ### Notes
 * Requires `tanzu cli`, `kubectl`, `zsh`, and `yq`
-* The tool expects to be run in a `project` context. Run: `tanzu project use PROJECT` to set it.
-  * The tool will not work if you are in a `space` context. 
